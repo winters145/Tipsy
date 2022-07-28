@@ -52,10 +52,10 @@ class CalculatorViewController: UIViewController {
         
         totalBill = Double(billTextField.text!) ?? 0.00
         splitBetween = Double(splitNumberLabel.text!)!
-        totalEach = (totalBill ?? 0.0 * (tipSelected + 1)) / splitBetween
-        print(String(format: "%.2f", totalEach!))
-        
+        totalEach = (totalBill! * (tipSelected + 1)) / splitBetween
+                
         self.performSegue(withIdentifier: "goToResults", sender: self)
+        billTextField.text = ""
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
