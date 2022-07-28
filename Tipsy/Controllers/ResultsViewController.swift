@@ -10,6 +10,9 @@ import UIKit
 
 class ResultsViewController: UIViewController {
 
+    var totalEach: Double?
+    var splitBetween: Double?
+    var tipPercentage: String?
     
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var settingsLabel: UILabel!
@@ -20,6 +23,7 @@ class ResultsViewController: UIViewController {
     }
     
     @IBAction func recalculatePressed(_ sender: UIButton) {
+        dismiss(animated: true)
     }
     
     /*
