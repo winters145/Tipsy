@@ -11,6 +11,9 @@ import UIKit
 class CalculatorViewController: UIViewController {
     
     var tipSelected = 0.1
+    var tipPercentage = "10%"
+    var splitBetween = 2.0
+    var totalEach: Double?
     
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var zeroPctButton: UIButton!
@@ -25,6 +28,8 @@ class CalculatorViewController: UIViewController {
         zeroPctButton.isSelected = false
         tenPctButton.isSelected = false
         twentyPctButton.isSelected = false
+        
+        tipPercentage = sender.currentTitle ?? "10%"
         
         if sender.currentTitle == "0%" {
             zeroPctButton.isSelected = true
