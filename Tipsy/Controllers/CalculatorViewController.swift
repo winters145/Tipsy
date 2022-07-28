@@ -11,7 +11,8 @@ import UIKit
 class CalculatorViewController: UIViewController {
     
     var tipSelected = 0.1
-    var tipPercentage = "10%"
+    var tipPercentage: String!
+    var totalBill: Double?
     var splitBetween = 2.0
     var totalEach: Double?
     
@@ -48,7 +49,8 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        let totalBill = Double(billTextField.text!)
+        
+        totalBill = Double(billTextField.text!) ?? 0.00
         splitBetween = Double(splitNumberLabel.text!)!
         totalEach = (totalBill ?? 0.0 * (tipSelected + 1)) / splitBetween
         print(String(format: "%.2f", totalEach!))
